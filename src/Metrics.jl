@@ -131,6 +131,8 @@ using LinearAlgebra: cross
     pressure_moment(x₀,sim::Simulation)
 
 Computes the pressure moment on an immersed body relative to point x₀.
+For example, pressure_moment(SA[x,y,z], sim) will compute the pressure
+moment on the simulation body at the point x,y,z.
 """
 pressure_moment(x₀,sim) = pressure_moment(x₀,sim.flow,sim.body)
 pressure_moment(x₀,flow,body) = pressure_moment(x₀,flow.p,flow.f,body,time(flow))
